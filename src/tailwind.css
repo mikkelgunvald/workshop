@@ -5,46 +5,48 @@
 @tailwind utilities;
 
 @layer base {
-  body[data-theme="dark"] {
-    --color-primary:red;
-    --color-secondary:green;  
+  body[data-theme='dark'] {
+    --color-lightbg: #30363d;
+    --color-darkbg: #24292e;
+    --color-primarytext: white;
+    --color-icon: #969da5;
   }
 
-  body[data-theme="light"] {
-    --color-primary:pink;
-    --color-secondary:lightgreen;  
+  body[data-theme='light'] {
+    --color-lightbg: white;
+    --color-darkbg: #f6f8fa;
+    --color-primarytext: #30363d;
+    --color-icon: #969da5;
   }
-
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+      'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-darkbg);
+    color: var(--color-primarytext);
   }
-  
+
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+  button:focus,
+  input:focus {
+    outline: none;
+    @apply shadow-outline;
   }
 }
 
 @layer components {
-  .btn {
-    @apply font-bold py-2 px-4 rounded;
+  .feather {
+    color: var(--color-icon);
   }
-
-  .btn-blue {
-    @apply bg-blue-500 text-white;
+  .feather-moon {
+    fill: var(--color-icon);
   }
-  .btn-blue:hover {
-    @apply bg-blue-700;
-  }
-
-  .btn-gray {
-    @apply bg-gray-400 text-gray-800;
-  }
-  .btn-gray:hover {
-    @apply bg-gray-500;
+  .feather-repeat:hover,
+  .feather-heart:hover {
+    transform: scale(1.2);
+    transition: transform 0.1s;
   }
 }
