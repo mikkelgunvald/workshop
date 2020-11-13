@@ -15,16 +15,3 @@ export default class Counter extends Component<{ initialCount: number }, { count
     return <button onClick={this.increment}>Count: {this.state.count}</button>
   }
 }
-
-// const obj = {
-//   name: 'object',
-//   display: function () {
-//     console.log(this.name)
-//   }
-// }
-// obj.display() <- has context
-// function st(cb, delay){
-//   cb()
-// }
-// st(obj.display, 2)
-// callback = obj.display; <- loses context - default window/undefined
